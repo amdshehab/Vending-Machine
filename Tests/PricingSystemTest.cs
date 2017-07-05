@@ -15,5 +15,14 @@ namespace Tests
             Assert.Equal(virtualSystem.balance, 50);
         }
 
+        [Fact]
+        public void CheckPurchaseReturnsChange()
+        {
+            Assert.Equal(virtualSystem.change, 0);
+            virtualSystem.insertCoins(50);
+            virtualSystem.checkPurchace(virtualSystem.balance, 40);
+            Assert.Equal(virtualSystem.change, 10);
+        }
+
     }
 }  
