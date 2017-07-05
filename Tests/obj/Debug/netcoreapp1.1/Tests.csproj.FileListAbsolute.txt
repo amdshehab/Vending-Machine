@@ -9,3 +9,5 @@
 /home/hyper0009/projects/vendingMachine/Tests/obj/Debug/netcoreapp1.1/Tests.AssemblyInfo.cs
 /home/hyper0009/projects/vendingMachine/Tests/obj/Debug/netcoreapp1.1/Tests.dll
 /home/hyper0009/projects/vendingMachine/Tests/obj/Debug/netcoreapp1.1/Tests.pdb
+/home/hyper0009/projects/vendingMachine/Tests/bin/Debug/netcoreapp1.1/vendingMachine.dll
+/home/hyper0009/projects/vendingMachine/Tests/bin/Debug/netcoreapp1.1/vendingMachine.pdb

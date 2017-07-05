@@ -2,7 +2,7 @@ using System;
 
 namespace vendingMachine
 {
-    class Item
+   public class Item
     {
         public string name;
         public int price;
