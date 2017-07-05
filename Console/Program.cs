@@ -4,9 +4,12 @@ namespace vendingMachine
 {
     class Program
     {
-        static void Main(string[] args)
+
+        public static void Main(string[] args)
         {
-            Controller.SelectYourItem();
+            var vendingMachineRunner = new Controller();
+            vendingMachineRunner.selectYourItem();
+            vendingMachineRunner.payment();
         }
     }
 }

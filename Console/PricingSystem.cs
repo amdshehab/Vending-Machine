@@ -6,6 +6,8 @@ namespace vendingMachine
 
         public int balance = 0;
         public int change = 0;
+
+        public bool transactionComplete = false;
         // system has a balance that is 0 to begin with
 
         // system takes variable and compares it to balance
@@ -24,7 +26,8 @@ namespace vendingMachine
         {
             if (currentBalance >= priceOfItem)
             {
-                change = currentBalance - priceOfItem; 
+                change = currentBalance - priceOfItem;
+                transactionComplete = true;
             }
         }
     }
