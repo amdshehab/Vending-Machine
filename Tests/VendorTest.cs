@@ -8,9 +8,8 @@ namespace Tests
         [Fact]
         public void VendingMachineContainsWaterAndCrisps()
         {
-            Vendor oldMachine = new Vendor();
-            Assert.Equal(oldMachine.machine.Length,2);
-            Assert.Equal(oldMachine.machine[0].name,"Bottled Water");
+            Assert.Equal(Vendor.machine.Length,2);
+            Assert.Equal(Vendor.machine[0].name,"Bottled Water");
         }
     } 
 }
