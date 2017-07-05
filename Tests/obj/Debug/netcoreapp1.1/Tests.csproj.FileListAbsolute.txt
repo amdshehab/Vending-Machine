@@ -1,0 +1,11 @@
+/home/hyper0009/projects/vendingMachine/Tests/bin/Debug/netcoreapp1.1/xunit.runner.visualstudio.dotnetcore.testadapter.dll
+/home/hyper0009/projects/vendingMachine/Tests/bin/Debug/netcoreapp1.1/xunit.runner.utility.netstandard15.dll
+/home/hyper0009/projects/vendingMachine/Tests/bin/Debug/netcoreapp1.1/xunit.runner.reporters.netstandard15.dll
+/home/hyper0009/projects/vendingMachine/Tests/bin/Debug/netcoreapp1.1/Tests.deps.json
+/home/hyper0009/projects/vendingMachine/Tests/bin/Debug/netcoreapp1.1/Tests.runtimeconfig.json
+/home/hyper0009/projects/vendingMachine/Tests/bin/Debug/netcoreapp1.1/Tests.runtimeconfig.dev.json
+/home/hyper0009/projects/vendingMachine/Tests/bin/Debug/netcoreapp1.1/Tests.dll
+/home/hyper0009/projects/vendingMachine/Tests/bin/Debug/netcoreapp1.1/Tests.pdb
+/home/hyper0009/projects/vendingMachine/Tests/obj/Debug/netcoreapp1.1/Tests.AssemblyInfo.cs
+/home/hyper0009/projects/vendingMachine/Tests/obj/Debug/netcoreapp1.1/Tests.dll
+/home/hyper0009/projects/vendingMachine/Tests/obj/Debug/netcoreapp1.1/Tests.pdb

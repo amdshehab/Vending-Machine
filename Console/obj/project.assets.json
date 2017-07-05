@@ -7042,16 +7042,16 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/hyper0009/projects/vendingMachine/vendingMachine.csproj",
+      "projectUniqueName": "/home/hyper0009/projects/vendingMachine/Console/vendingMachine.csproj",
       "projectName": "vendingMachine",
-      "projectPath": "/home/hyper0009/projects/vendingMachine/vendingMachine.csproj",
-      "outputPath": "/home/hyper0009/projects/vendingMachine/obj/",
+      "projectPath": "/home/hyper0009/projects/vendingMachine/Console/vendingMachine.csproj",
+      "outputPath": "/home/hyper0009/projects/vendingMachine/Console/obj/",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
       ],
       "files": {
-        "lib/netcoreapp1.1/vendingMachine.dll": "/home/hyper0009/projects/vendingMachine/bin/placeholder/netcoreapp1.1/vendingMachine.dll"
+        "lib/netcoreapp1.1/vendingMachine.dll": "/home/hyper0009/projects/vendingMachine/Console/bin/placeholder/netcoreapp1.1/vendingMachine.dll"
       },
       "frameworks": {
         "netcoreapp1.1": {
