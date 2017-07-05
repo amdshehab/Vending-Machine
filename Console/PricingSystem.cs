@@ -1,0 +1,23 @@
+using vendingMachine;
+namespace vendingMachine
+{
+    public class PricingSystem
+    {
+
+        public int balance = 0;
+        // system has a balance that is 0 to begin with
+
+        // system takes variable and compares it to balance
+        // if variable = or is greater than the balance
+        // system breaks loop
+
+        // system has a method by which you can add money to it
+
+        // main controller has a const by which we change what the user can insert
+
+        public void insertCoins(int amount)
+        {
+            balance+=amount;
+        } 
+    }
+}
