@@ -10,8 +10,13 @@ namespace vendingMachine
         {
             Console.WriteLine("Please select your item number");
             int index = Int32.Parse(Console.ReadLine());
-            var selectedItem = Vendor.machine[index];
+            var selectedItem = Vendor.machine[index-1];
             Console.WriteLine($"you have chosen {selectedItem.name}");
+        }
+
+        public static void Payment()
+        {
+            
         }
     }
 }
