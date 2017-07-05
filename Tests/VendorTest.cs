@@ -10,6 +10,7 @@ namespace Tests
         {
             Vendor oldMachine = new Vendor();
             Assert.Equal(oldMachine.machine.Length,2);
+            Assert.Equal(oldMachine.machine[0].name,"Bottled Water");
         }
     } 
 }
