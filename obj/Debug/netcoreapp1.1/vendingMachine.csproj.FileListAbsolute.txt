@@ -1,8 +1,0 @@
-/home/hyper0009/projects/vendingMachine/bin/Debug/netcoreapp1.1/vendingMachine.deps.json
-/home/hyper0009/projects/vendingMachine/bin/Debug/netcoreapp1.1/vendingMachine.runtimeconfig.json
-/home/hyper0009/projects/vendingMachine/bin/Debug/netcoreapp1.1/vendingMachine.runtimeconfig.dev.json
-/home/hyper0009/projects/vendingMachine/bin/Debug/netcoreapp1.1/vendingMachine.dll
-/home/hyper0009/projects/vendingMachine/bin/Debug/netcoreapp1.1/vendingMachine.pdb
-/home/hyper0009/projects/vendingMachine/obj/Debug/netcoreapp1.1/vendingMachine.AssemblyInfo.cs
-/home/hyper0009/projects/vendingMachine/obj/Debug/netcoreapp1.1/vendingMachine.dll
-/home/hyper0009/projects/vendingMachine/obj/Debug/netcoreapp1.1/vendingMachine.pdb
