@@ -13,7 +13,6 @@ namespace Tests
             Assert.Equal(virtualSystem.balance, 0);
             virtualSystem.insertCoins(50);
             Assert.Equal(virtualSystem.balance, 50);
-
         }
 
     }
