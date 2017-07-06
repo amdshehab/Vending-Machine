@@ -11,7 +11,7 @@ namespace vendingMachine
         public void selectYourItem()
         {
             Console.WriteLine("Please select your item number");
-            handleInput();
+            handleFirstUserInput();
             Console.WriteLine($"you have chosen {selectedItem.name}");
         }
 
@@ -20,8 +20,7 @@ namespace vendingMachine
             while (moneyMachine.transactionComplete == false)
             {
                 Console.WriteLine("To insert coins, press 1. To cancel, 2");
-                int choice = Int32.Parse(Console.ReadLine());
-                selectionProcessing(choice);
+                handleSecondUserInput();
             }
         }
 
@@ -37,21 +36,45 @@ namespace vendingMachine
                     Console.WriteLine("see you later");
                     moneyMachine.transactionComplete = true;
                     break;
+                default:
+                    Console.WriteLine("You have made an invalid selection");
+                    break;
             }
         }
 
-        public void handleInput()
+        public void handleFirstUserInput()
         {
              int index = 0;
              if (Int32.TryParse(Console.ReadLine(), out index))
              {
-                 selectedItem = Vendor.machine[index-1];
+                 if (index-1 < Vendor.machine.Length && index-1 >= 0)
+                 {
+                    selectedItem = Vendor.machine[index-1];
+                 }
+                 else
+                 {
+                     Console.WriteLine("the item number selected does not exist, please try again");
+                     selectYourItem();
+                 }
              }
              else
              {
                  Console.WriteLine("Invalid Input");
                  selectYourItem();
              }
+        }
+
+        public void handleSecondUserInput()
+        {
+            int choice = 0;
+            if (Int32.TryParse(Console.ReadLine(), out choice))
+            {
+                selectionProcessing(choice);
+            }
+            else
+            {
+                Console.WriteLine("Invalid Input");
+            }
         }
     }
 }
