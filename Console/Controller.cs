@@ -7,7 +7,7 @@ namespace vendingMachine
     {
         PricingSystem moneyMachine = new PricingSystem();
         static Item selectedItem;
-        double acceptedCoins = 0.50;
+        decimal acceptedCoins = 0.50m;
         public void selectYourItem()
         {
             Console.WriteLine("Please select your item number");

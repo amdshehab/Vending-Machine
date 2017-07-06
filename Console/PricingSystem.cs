@@ -5,17 +5,17 @@ namespace vendingMachine
     public class PricingSystem
     {
 
-        public double balance = 0;
-        public double change = 0;
+        public decimal balance = 0;
+        public decimal change = 0;
 
         public bool transactionComplete = false;
-        public void insertCoins(double amount, double priceOfItem)
+        public void insertCoins(decimal amount, decimal priceOfItem)
         {
             balance+=amount;
             checkPurchace(balance, priceOfItem);
         }
 
-        public void checkPurchace(double currentBalance, double priceOfItem)
+        public void checkPurchace(decimal currentBalance, decimal priceOfItem)
         {
             if (currentBalance >= priceOfItem)
             {
