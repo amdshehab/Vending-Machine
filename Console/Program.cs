@@ -4,7 +4,6 @@ namespace vendingMachine
 {
     class Program
     {
-
         public static void Main(string[] args)
         {
             var vendingMachineRunner = new Controller();
