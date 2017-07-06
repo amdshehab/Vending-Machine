@@ -9,8 +9,8 @@ namespace Tests
         [Fact]
         public void TestWorkingConstructor()
         {
-        Item product = new Item("pepsi", 5);
-        Assert.Equal(product.price,5);
+        Item product = new Item("pepsi", 0.50m);
+        Assert.Equal(product.price, 0.50m);
         Assert.Equal(product.name, "pepsi");
         }
     }
