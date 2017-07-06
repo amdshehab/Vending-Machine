@@ -7,12 +7,11 @@ namespace vendingMachine
     {
         PricingSystem moneyMachine = new PricingSystem();
         static Item selectedItem;
-        int acceptedCoins = 50;
+        double acceptedCoins = 0.50;
         public void selectYourItem()
         {
             Console.WriteLine("Please select your item number");
-            int index = Int32.Parse(Console.ReadLine());
-            selectedItem = Vendor.machine[index-1];
+            handleInput();
             Console.WriteLine($"you have chosen {selectedItem.name}");
         }
 
@@ -32,12 +31,27 @@ namespace vendingMachine
             {
                 case 1:
                     Console.WriteLine("you have paid 50 cents");
-                    moneyMachine.insertCoins(acceptedCoins);
+                    moneyMachine.insertCoins(acceptedCoins, selectedItem.price);
                     break;
                 case 2:
                     Console.WriteLine("see you later");
+                    moneyMachine.transactionComplete = true;
                     break;
             }
+        }
+
+        public void handleInput()
+        {
+             int index = 0;
+             if (Int32.TryParse(Console.ReadLine(), out index))
+             {
+                 selectedItem = Vendor.machine[index-1];
+             }
+             else
+             {
+                 Console.WriteLine("Invalid Input");
+                 selectYourItem();
+             }
         }
     }
 }

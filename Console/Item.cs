@@ -5,9 +5,9 @@ namespace vendingMachine
    public class Item
     {
         public string name;
-        public int price;
+        public double price;
 
-        public Item(string itemName, int itemPrice)
+        public Item(string itemName, double itemPrice)
         {
             name = itemName;
             price = itemPrice;
