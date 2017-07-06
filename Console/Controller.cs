@@ -20,8 +20,7 @@ namespace vendingMachine
             while (moneyMachine.transactionComplete == false)
             {
                 Console.WriteLine("To insert coins, press 1. To cancel, 2");
-                int choice = Int32.Parse(Console.ReadLine());
-                selectionProcessing(choice);
+                handleSecondUserInput();
             }
         }
 
@@ -36,6 +35,9 @@ namespace vendingMachine
                 case 2:
                     Console.WriteLine("see you later");
                     moneyMachine.transactionComplete = true;
+                    break;
+                default:
+                    Console.WriteLine("You have made an invalid selection");
                     break;
             }
         }
@@ -60,6 +62,19 @@ namespace vendingMachine
                  Console.WriteLine("Invalid Input");
                  selectYourItem();
              }
+        }
+
+        public void handleSecondUserInput()
+        {
+            int choice = 0;
+            if (Int32.TryParse(Console.ReadLine(), out choice))
+            {
+                selectionProcessing(choice);
+            }
+            else
+            {
+                Console.WriteLine("Invalid Input");
+            }
         }
     }
 }
