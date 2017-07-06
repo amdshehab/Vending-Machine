@@ -8,11 +8,19 @@ namespace vendingMachine
         PricingSystem moneyMachine = new PricingSystem();
         static Item selectedItem;
         decimal acceptedCoins = 0.50m;
+        int userChoice = 0;
         public void selectYourItem()
         {
             Console.WriteLine("Please select your item number");
-            handleFirstUserInput();
-            Console.WriteLine($"you have chosen {selectedItem.name}");
+            if (handleUserInput())
+            {
+                checkSelectionInArray();
+            }
+            else
+            {
+                Console.WriteLine("Invalid Input");
+                selectYourItem();
+            }
         }
 
         public void payment()
@@ -20,7 +28,14 @@ namespace vendingMachine
             while (moneyMachine.transactionComplete == false)
             {
                 Console.WriteLine("To insert coins, press 1. To cancel, 2");
-                handleSecondUserInput();
+                if (handleUserInput())
+                {
+                    selectionProcessing(userChoice);
+                }
+                else
+                {
+                    Console.WriteLine("Invalid Input");
+                }
             }
         }
 
@@ -42,39 +57,23 @@ namespace vendingMachine
             }
         }
 
-        public void handleFirstUserInput()
+        public void checkSelectionInArray()
         {
-             int index = 0;
-             if (Int32.TryParse(Console.ReadLine(), out index))
-             {
-                 if (index-1 < Vendor.machine.Length && index-1 >= 0)
-                 {
-                    selectedItem = Vendor.machine[index-1];
-                 }
-                 else
-                 {
-                     Console.WriteLine("the item number selected does not exist, please try again");
-                     selectYourItem();
-                 }
-             }
-             else
-             {
-                 Console.WriteLine("Invalid Input");
-                 selectYourItem();
-             }
-        }
-
-        public void handleSecondUserInput()
-        {
-            int choice = 0;
-            if (Int32.TryParse(Console.ReadLine(), out choice))
+            if (userChoice-1 < Vendor.machine.Length && userChoice-1 >= 0)
             {
-                selectionProcessing(choice);
+                selectedItem = Vendor.machine[userChoice-1];
+                Console.WriteLine($"you have chosen {selectedItem.name}");
             }
             else
             {
-                Console.WriteLine("Invalid Input");
+                Console.WriteLine("the item number selected does not exist, please try again");
+                selectYourItem();
             }
+        }
+
+        public Boolean handleUserInput()
+        {
+           return Int32.TryParse(Console.ReadLine(), out userChoice);
         }
     }
 }
