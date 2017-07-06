@@ -6,12 +6,14 @@ namespace vendingMachine
     public class Controller
     {
         PricingSystem moneyMachine = new PricingSystem();
+        Printer printer = new Printer();
+
         static Item selectedItem;
         decimal acceptedCoins = 0.50m;
         int userChoice = 0;
         public void selectYourItem()
         {
-            Console.WriteLine("Please select your item number");
+            printer.printHeader();
             if (handleUserInput())
             {
                 checkSelectionInArray();
