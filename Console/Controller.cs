@@ -6,12 +6,14 @@ namespace vendingMachine
     public class Controller
     {
         PricingSystem moneyMachine = new PricingSystem();
+        Printer printer = new Printer();
+
         static Item selectedItem;
         decimal acceptedCoins = 0.50m;
         int userChoice = 0;
         public void selectYourItem()
         {
-            Console.WriteLine("Please select your item number");
+            printer.printHeader();
             if (handleUserInput())
             {
                 checkSelectionInArray();
@@ -39,12 +41,12 @@ namespace vendingMachine
             }
         }
 
-        public void selectionProcessing(int selection)
+        private void selectionProcessing(int selection)
         {
             switch(selection)
             {
                 case 1:
-                    Console.WriteLine("you have paid 50 cents");
+                    Console.WriteLine($"current payment ---> £{acceptedCoins}");
                     moneyMachine.insertCoins(acceptedCoins, selectedItem.price);
                     break;
                 case 2:
@@ -57,7 +59,7 @@ namespace vendingMachine
             }
         }
 
-        public void checkSelectionInArray()
+        private void checkSelectionInArray()
         {
             if (userChoice-1 < Vendor.machine.Length && userChoice-1 >= 0)
             {
@@ -71,7 +73,7 @@ namespace vendingMachine
             }
         }
 
-        public Boolean handleUserInput()
+        private Boolean handleUserInput()
         {
            return Int32.TryParse(Console.ReadLine(), out userChoice);
         }
