@@ -46,7 +46,7 @@ namespace vendingMachine
             switch(selection)
             {
                 case 1:
-                    Console.WriteLine("you have paid 50 cents");
+                    Console.WriteLine($"current payment ---> £{acceptedCoins}");
                     moneyMachine.insertCoins(acceptedCoins, selectedItem.price);
                     break;
                 case 2:
