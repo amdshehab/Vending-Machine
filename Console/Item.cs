@@ -6,6 +6,7 @@ namespace vendingMachine
     {
         public string name;
         public decimal price;
+        public int quantityToVend;
 
         public Item(string itemName, decimal itemPrice)
         {
