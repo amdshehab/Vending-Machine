@@ -8,6 +8,8 @@ namespace vendingMachine
         public decimal balance = 0;
         public decimal change = 0;
 
+        public decimal totalAmount = 0;
+
         public bool transactionComplete = false;
         public void insertCoins(decimal amount, decimal priceOfItem)
         {

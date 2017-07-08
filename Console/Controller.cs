@@ -9,8 +9,6 @@ namespace vendingMachine
         Printer printer = new Printer();
 
         static Item selectedItem;
-
-        decimal totalAmount = 0;
         decimal acceptedCoins = 0.50m;
         int userChoice = 0;
         public void selectYourItem()
@@ -31,7 +29,8 @@ namespace vendingMachine
         {
             while (moneyMachine.transactionComplete == false)
             {
-                Console.WriteLine("To insert coins, press 1. To choose another item: 2 To cancel, 3");
+                Console.WriteLine(Environment.NewLine + 
+                "To insert coins: press 1, To choose another item: 2, or To cancel: 3");
                 if (handleUserInput())
                 {
                     selectionProcessing(userChoice);
@@ -49,7 +48,7 @@ namespace vendingMachine
             {
                 case 1:
                     Console.WriteLine($"current payment ---> £{acceptedCoins}");
-                    moneyMachine.insertCoins(acceptedCoins, totalAmount);
+                    moneyMachine.insertCoins(acceptedCoins, moneyMachine.totalAmount);
                     break;
                  case 2:
                     selectYourItem();
@@ -82,9 +81,10 @@ namespace vendingMachine
             Console.WriteLine($"please select the amount of {selectedItem.name} you want? ");
             if (handleUserInput())
             {
-                totalAmount += selectedItem.price*userChoice;
+                moneyMachine.totalAmount += selectedItem.price*userChoice;
                 selectedItem.quantityToVend += userChoice;
-                Console.WriteLine($"Selection ----> {userChoice} {selectedItem.name} Total: £{totalAmount}");
+                Console.WriteLine(Environment.NewLine +
+                $"You have added {userChoice} {selectedItem.name} ||| Total: £{moneyMachine.totalAmount}");
             }
             else
             {

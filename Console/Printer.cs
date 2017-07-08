@@ -21,7 +21,6 @@ namespace vendingMachine
             Console.WriteLine(howToSelect + header);
             header = "";
         }
-
         public static void vendRequestedItems()
         {
             for(int i = 0; i < length; i++)
