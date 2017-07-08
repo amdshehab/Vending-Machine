@@ -36,3 +36,14 @@ I will refactor to keep the code DRY, possibly merge the two handleInput methods
 I will test the "merged" handleInput method to insure that exception handling acounts for all cases.
 
 
+## Final Approach
+
+The printer logic is not complete and the controller class refactored, exception handling is very good and unit tests insure full functionality. The program satisfies the following aims I set out in the begining of the project:
+
+1. Extendability: By adopting single responsability principles, this program can be easily extended; for example to add a new "item", you would just need to add the item to the Vendor class, the program would function as normal and you would not need to amend anything else.
+
+2. OOP: This program demonstrates very good OOP principles throughout its design.
+
+3. Simplicity: Becuase everything is seperated out, no class is "fat", all classes are designed with simplicity in mind.
+
+I will now complete the class diagram and refactor anything remaining.
