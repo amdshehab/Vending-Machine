@@ -15,7 +15,7 @@ namespace vendingMachine
         int userChoice = 0;
         public void selectYourItem()
         {
-            printer.printHeader();
+            Printer.printHeader();
             if (handleUserInput())
             {
                 checkSelectionInArray();
