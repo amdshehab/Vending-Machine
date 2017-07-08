@@ -41,7 +41,7 @@ namespace vendingMachine
             }
         }
 
-        public void selectionProcessing(int selection)
+        private void selectionProcessing(int selection)
         {
             switch(selection)
             {
@@ -59,7 +59,7 @@ namespace vendingMachine
             }
         }
 
-        public void checkSelectionInArray()
+        private void checkSelectionInArray()
         {
             if (userChoice-1 < Vendor.machine.Length && userChoice-1 >= 0)
             {
@@ -73,7 +73,7 @@ namespace vendingMachine
             }
         }
 
-        public Boolean handleUserInput()
+        private Boolean handleUserInput()
         {
            return Int32.TryParse(Console.ReadLine(), out userChoice);
         }
