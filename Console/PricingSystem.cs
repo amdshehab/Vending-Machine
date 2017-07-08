@@ -20,7 +20,9 @@ namespace vendingMachine
             if (currentBalance >= priceOfItem)
             {
                 change = currentBalance - priceOfItem;
-                Console.WriteLine($"***Thank you for your custom, change due ---> £{change}***");
+                Console.WriteLine($"***Thank you for your custom, change due ---> £{change}***" 
+                + Environment.NewLine + "Please take your items:-");
+                Printer.vendRequestedItems();
                 transactionComplete = true;
             }
             else
