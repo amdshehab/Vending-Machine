@@ -1,5 +1,14 @@
-# Vending-Machine
-A vending machine console application
+
+<h1 align="center"> Vending Machine</h1>
+
+A one of a kind, interactive vending machine console application!
+
+## Quick Start
+
+  + Fork and download this repo
+  + Install .net core on your device: https://www.microsoft.com/net/core
+  + cd into the vendingMachine folder and type "dotnet run" to run application and follow the console instructions.
+  + cd into the tests folder and type "dotnet test" to run tests.
 
 ## Initial Approach
 
@@ -48,7 +57,7 @@ The Vending machine's main logic has now been implemented, and the user can now 
 
   + I will refactor to keep the code DRY, possibly merge the two handleInput methods into one and work with their return value to drive the direction of the program.
 
-## Final Approach
+## Final thoughts
 
 The printer logic is now complete and the controller class refactored, exception handling is very good and unit tests insure full functionality. The program satisfies the following aims I set out in the begining of the project:
 
