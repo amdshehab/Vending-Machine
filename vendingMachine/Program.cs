@@ -8,7 +8,7 @@ namespace vendingMachine
         {
             var vendingMachineRunner = new Controller();
             vendingMachineRunner.selectYourItem();
-            vendingMachineRunner.payment();
+            vendingMachineRunner.mainMenu();
         }
     }
 }

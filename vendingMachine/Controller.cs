@@ -11,6 +11,7 @@ namespace vendingMachine
         private const decimal acceptedCoins = 0.50m;
         private int userChoice = 0;
         
+        //program entry point, starts item selection process.
         public void selectYourItem()
         {
             Printer.printHeader();
@@ -25,7 +26,8 @@ namespace vendingMachine
             }
         }
 
-        public void payment()
+        //this method loops to allow the user to choose another item, exit the program or start paying
+        public void mainMenu()
         {
             while (moneyMachine.transactionComplete == false)
             {
@@ -42,6 +44,7 @@ namespace vendingMachine
             }
         }
 
+        //processes main menu selection
         private void selectionProcessing(int selection)
         {
             switch(selection)
@@ -53,7 +56,7 @@ namespace vendingMachine
                     selectYourItem();
                     break;
                 case 3:
-                    Console.WriteLine("see you later");
+                    Console.WriteLine("See you later!");
                     moneyMachine.transactionComplete = true;
                     break;
                 default:
@@ -62,14 +65,15 @@ namespace vendingMachine
             }
         }
 
+        //starts the payment loop, can be extended for different coins
         private void startPaymentProcess(){
             while(moneyMachine.transactionComplete == false)
             {
-                Console.WriteLine("press 1 to insert £0.50 coins");
+                Console.WriteLine("Press 1 to insert £0.50 pence");
                 switch(Console.ReadLine())
                 {
                     case "1":
-                    Console.WriteLine($"current payment ---> £{acceptedCoins}");
+                    Console.WriteLine($"Current payment ---> £{acceptedCoins}");
                     moneyMachine.insertCoins(acceptedCoins, moneyMachine.totalAmount);
                     break;
 
@@ -79,6 +83,8 @@ namespace vendingMachine
                 }
             }
         }
+
+        //checks that the item selected exists in the vending machine array
         private void checkSelectionInArray()
         {
             if (userChoice-1 < Vendor.machine.Length && userChoice-1 >= 0)
@@ -93,6 +99,8 @@ namespace vendingMachine
                 selectYourItem();
             }
         }
+
+        //checks the amount of an item required for purchase
         private void quantityCheck()
         {
             Console.WriteLine($"please select the amount of {selectedItem.name} you want? ");
@@ -109,6 +117,8 @@ namespace vendingMachine
                 quantityCheck();
             }
         }
+
+        //reads user input and attempts to convert it to and integer
         private Boolean handleUserInput()
         {
            return Int32.TryParse(Console.ReadLine(), out userChoice);
