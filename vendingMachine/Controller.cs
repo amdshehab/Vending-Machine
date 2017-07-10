@@ -7,10 +7,10 @@ namespace vendingMachine
     {
         PricingSystem moneyMachine = new PricingSystem();
         Printer printer = new Printer();
-
         static Item selectedItem;
-        decimal acceptedCoins = 0.50m;
-        int userChoice = 0;
+        private const decimal acceptedCoins = 0.50m;
+        private int userChoice = 0;
+        
         public void selectYourItem()
         {
             Printer.printHeader();
@@ -30,7 +30,7 @@ namespace vendingMachine
             while (moneyMachine.transactionComplete == false)
             {
                 Console.WriteLine(Environment.NewLine + 
-                "To insert coins: press 1, To choose another item: 2, or To cancel: 3");
+                "To pay for your items: press 1, To choose another item: 2, or To cancel: 3");
                 if (handleUserInput())
                 {
                     selectionProcessing(userChoice);
@@ -47,8 +47,7 @@ namespace vendingMachine
             switch(selection)
             {
                 case 1:
-                    Console.WriteLine($"current payment ---> £{acceptedCoins}");
-                    moneyMachine.insertCoins(acceptedCoins, moneyMachine.totalAmount);
+                    startPaymentProcess();
                     break;
                  case 2:
                     selectYourItem();
@@ -60,6 +59,24 @@ namespace vendingMachine
                 default:
                     Console.WriteLine("You have made an invalid selection");
                     break;
+            }
+        }
+
+        private void startPaymentProcess(){
+            while(moneyMachine.transactionComplete == false)
+            {
+                Console.WriteLine("press 1 to insert £0.50 coins");
+                switch(Console.ReadLine())
+                {
+                    case "1":
+                    Console.WriteLine($"current payment ---> £{acceptedCoins}");
+                    moneyMachine.insertCoins(acceptedCoins, moneyMachine.totalAmount);
+                    break;
+
+                    default:
+                    Console.WriteLine("Invalid input");
+                    break;
+                }
             }
         }
         private void checkSelectionInArray()
