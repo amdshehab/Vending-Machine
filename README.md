@@ -6,7 +6,7 @@ A one of a kind, interactive vending machine console application!
 ## Quick Start
 
   + Fork and download this repo.
-  + Install .net core on your device: https://www.microsoft.com/net/core
+  + Install .NET Core on your device: https://www.microsoft.com/net/core
   + cd into the vendingMachine folder and type "dotnet run" to run the application and follow the console instructions.
   + cd into the tests folder and type "dotnet test" to run tests.
 
@@ -73,4 +73,4 @@ The printer logic is now complete and the controller class refactored, exception
 
   + I have unit tested the main classes in this program. Exception handling is designed to never break out of the application.
 
-I will now complete the class diagram and refactor anything remaining.
+
